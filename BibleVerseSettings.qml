@@ -12,8 +12,8 @@ PluginSettings {
 
     property var translationOptions: [
         {
-            label: "KJV - King James Version",
-            value: "KJV"
+            label: "NET - New English Translation",
+            value: "NET"
         }
     ]
 
@@ -83,7 +83,7 @@ PluginSettings {
         label: I18n.trFor("bibleVerse", "Default Translation")
         description: I18n.trFor("bibleVerse", "Used when the reference does not name one")
         options: root.translationOptions
-        defaultValue: "KJV"
+        defaultValue: "NET"
     }
 
     SelectionSetting {
@@ -110,8 +110,8 @@ PluginSettings {
     ToggleSetting {
         settingKey: "verseNumbers"
         label: I18n.trFor("bibleVerse", "Verse Numbers")
-        description: I18n.trFor("bibleVerse", "Prefix each verse with its number")
-        defaultValue: true
+        description: I18n.trFor("bibleVerse", "Prefix each verse with its number, and its chapter when the passage spans several")
+        defaultValue: false
     }
 
     ToggleSetting {

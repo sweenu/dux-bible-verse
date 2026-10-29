@@ -13,8 +13,8 @@ QtObject {
 
     property string trigger: "bible"
     property bool noTrigger: false
-    property string translation: "KJV"
-    property bool verseNumbers: true
+    property string translation: "NET"
+    property bool verseNumbers: false
     property bool versePerLine: true
     property string referencePosition: "before"
 
@@ -61,8 +61,8 @@ QtObject {
             return;
         trigger = pluginService.loadPluginData(pluginId, "trigger", "bible");
         noTrigger = pluginService.loadPluginData(pluginId, "noTrigger", false);
-        translation = pluginService.loadPluginData(pluginId, "translation", "KJV") || "KJV";
-        verseNumbers = pluginService.loadPluginData(pluginId, "verseNumbers", true);
+        translation = pluginService.loadPluginData(pluginId, "translation", "NET") || "NET";
+        verseNumbers = pluginService.loadPluginData(pluginId, "verseNumbers", false);
         versePerLine = pluginService.loadPluginData(pluginId, "versePerLine", true);
         referencePosition = pluginService.loadPluginData(pluginId, "referencePosition", "before");
         rebuildBookIndex();

@@ -129,7 +129,7 @@ function findBook(index, rawName) {
 }
 
 // Parses the part after the book name: "5", "5-7", "5:38", "5:38-42",
-// "5:38-6:4", "3:16,18-20", "3:16; 4:1-3". Returns a list of
+// "5:38-6:4" (or "5:38-6-4"), "3:16,18-20", "3:16; 4:1-3". Returns a list of
 // {chapter, from, to} (to = 0 means until the end of the chapter) or null.
 function parseSpec(spec) {
     const parts = spec.replace(/[–—]/g, "-").replace(/\s+/g, "").split(/[,;]/);
@@ -141,7 +141,7 @@ function parseSpec(spec) {
         const part = parts[i];
         if (!part)
             return null;
-        let m = part.match(/^(\d+)[:.](\d+)(?:-(?:(\d+)[:.])?(\d+))?$/);
+        let m = part.match(/^(\d+)[:.](\d+)(?:-(?:(\d+)[:.-])?(\d+))?$/);
         if (m) {
             chapter = parseInt(m[1]);
             verseMode = true;
@@ -191,7 +191,7 @@ function parseSpec(spec) {
 }
 
 function formatSpec(spec) {
-    return spec.replace(/[–—]/g, "-").replace(/\s+/g, "").replace(/(\d)\.(\d)/g, "$1:$2").replace(/;/g, "; ");
+    return spec.replace(/[–—]/g, "-").replace(/\s+/g, "").replace(/(\d)\.(\d)/g, "$1:$2").replace(/(\d+:\d+-\d+)-(\d+)/g, "$1:$2").replace(/;/g, "; ");
 }
 
 // Returns null when the query does not look like a reference at all, or

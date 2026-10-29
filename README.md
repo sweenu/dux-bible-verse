@@ -11,9 +11,9 @@ Mat 5:38-42
 copies
 
 ```
-Matthew 5:38-42 (KJV)
-38 Ye have heard that it hath been said, An eye for an eye, and a tooth for a tooth:
-39 But I say unto you, That ye resist not evil: but whosoever shall smite thee on thy right cheek, turn to him the other also.
+Matthew 5:38-42 (NET)
+“You have heard that it was said, ‘An eye for an eye and a tooth for a tooth.’
+But I say to you, do not resist the evildoer. But whoever strikes you on the right cheek, turn the other to him as well.
 ...
 ```
 
@@ -25,7 +25,7 @@ References work straight from the launcher search. Prefix them with `bible` to s
 | --- | --- |
 | `John 3:16` | one verse |
 | `Mat 5:38-42` | a range of verses |
-| `Mat 5:38-6:4` | a range across chapters |
+| `Mat 27:5-28:13` | a range across chapters |
 | `Ps 23` | a whole chapter |
 | `Mat 5-7` | several chapters (up to 10) |
 | `John 3:16,18-20` or `Rom 3:23; 6:23` | a list |
@@ -38,9 +38,9 @@ Book names can be full or abbreviated (`Matt`, `Mt`, `1 Co`, `I Cor`, `Phil`, `P
 ## Settings
 
 - **Trigger**: prefix for Bible-only results (default `bible`)
-- **Default Translation**: any translation Bolls offers (default KJV)
+- **Default Translation**: any translation Bolls offers (default NET)
 - **Reference**: put the reference before the text, after it, or leave it out
-- **Verse Numbers**: prefix each verse with its number
+- **Verse Numbers**: prefix each verse with its number, and its chapter when the passage spans several (off by default)
 - **One Verse per Line**: otherwise verses are joined into a paragraph
 
 NIV is not offered because its publisher does not allow Bolls to serve it.

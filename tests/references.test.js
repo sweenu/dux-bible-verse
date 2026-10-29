@@ -58,6 +58,8 @@ test("spec parsing", () => {
     assert.deepStrictEqual(plain(parseSpec("5:38-7:2")), [
         { chapter: 5, from: 38, to: 0 }, { chapter: 6, from: 1, to: 0 }, { chapter: 7, from: 1, to: 2 }
     ]);
+    assert.deepStrictEqual(plain(parseSpec("27:5-28:13")), [{ chapter: 27, from: 5, to: 0 }, { chapter: 28, from: 1, to: 13 }]);
+    assert.deepStrictEqual(plain(parseSpec("27:5-28-13")), plain(parseSpec("27:5-28:13")));
     assert.deepStrictEqual(plain(parseSpec("3:16,18-20")), [{ chapter: 3, from: 16, to: 16 }, { chapter: 3, from: 18, to: 20 }]);
     assert.deepStrictEqual(plain(parseSpec("3:16; 4:1-3")), [{ chapter: 3, from: 16, to: 16 }, { chapter: 4, from: 1, to: 3 }]);
     assert.deepStrictEqual(plain(parseSpec("5.38–42")), [{ chapter: 5, from: 38, to: 42 }]);
@@ -77,6 +79,10 @@ test("reference parsing", () => {
     r = parseReference("1 Cor 13:4-7 esv", index, resolve);
     assert.strictEqual(r.book.id, 46);
     assert.strictEqual(r.translation, "ESV");
+
+    r = parseReference("Matthew 27:5-28-13", index, resolve);
+    assert.strictEqual(r.spec, "27:5-28:13");
+    assert.deepStrictEqual(plain(r.chapters), [27, 28]);
 
     r = parseReference("Ps 23", index, resolve);
     assert.strictEqual(r.book.id, 19);
