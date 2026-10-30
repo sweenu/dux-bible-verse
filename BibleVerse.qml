@@ -15,7 +15,6 @@ QtObject {
     property bool noTrigger: false
     property string translation: "NET"
     property bool verseNumbers: false
-    property bool versePerLine: true
     property string referencePosition: "before"
 
     // lowercase code -> {code, name}; filled from languages.json, the
@@ -63,7 +62,6 @@ QtObject {
         noTrigger = pluginService.loadPluginData(pluginId, "noTrigger", false);
         translation = pluginService.loadPluginData(pluginId, "translation", "NET") || "NET";
         verseNumbers = pluginService.loadPluginData(pluginId, "verseNumbers", false);
-        versePerLine = pluginService.loadPluginData(pluginId, "versePerLine", true);
         referencePosition = pluginService.loadPluginData(pluginId, "referencePosition", "before");
         rebuildBookIndex();
         loadBooks(translation);
@@ -328,7 +326,7 @@ QtObject {
             return "";
         return Refs.formatPassage(passage.verses, req.label, {
             verseNumbers: verseNumbers,
-            versePerLine: versePerLine,
+            versePerLine: verseNumbers,
             referencePosition: referencePosition
         });
     }

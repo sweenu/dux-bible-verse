@@ -110,14 +110,7 @@ PluginSettings {
     ToggleSetting {
         settingKey: "verseNumbers"
         label: I18n.trFor("bibleVerse", "Verse Numbers")
-        description: I18n.trFor("bibleVerse", "Prefix each verse with its number, and its chapter when the passage spans several")
+        description: I18n.trFor("bibleVerse", "Put each verse on its own line, prefixed with its number (and its chapter when the passage spans several). Otherwise the passage is copied as one paragraph.")
         defaultValue: false
-    }
-
-    ToggleSetting {
-        settingKey: "versePerLine"
-        label: I18n.trFor("bibleVerse", "One Verse per Line")
-        description: I18n.trFor("bibleVerse", "Otherwise verses are joined into one paragraph")
-        defaultValue: true
     }
 }

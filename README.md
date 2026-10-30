@@ -12,9 +12,7 @@ copies
 
 ```
 Matthew 5:38-42 (NET)
-“You have heard that it was said, ‘An eye for an eye and a tooth for a tooth.’
-But I say to you, do not resist the evildoer. But whoever strikes you on the right cheek, turn the other to him as well.
-...
+“You have heard that it was said, ‘An eye for an eye and a tooth for a tooth.’ But I say to you, do not resist the evildoer. ...
 ```
 
 References work straight from the launcher search. Prefix them with `bible` to see only Bible results.
@@ -40,8 +38,7 @@ Book names can be full or abbreviated (`Matt`, `Mt`, `1 Co`, `I Cor`, `Phil`, `P
 - **Trigger**: prefix for Bible-only results (default `bible`)
 - **Default Translation**: any translation Bolls offers (default NET)
 - **Reference**: put the reference before the text, after it, or leave it out
-- **Verse Numbers**: prefix each verse with its number, and its chapter when the passage spans several (off by default)
-- **One Verse per Line**: otherwise verses are joined into a paragraph
+- **Verse Numbers**: put each verse on its own line, prefixed with its number (and its chapter when the passage spans several). Off by default, which copies the passage as one paragraph
 
 NIV is not offered because its publisher does not allow Bolls to serve it.
 
